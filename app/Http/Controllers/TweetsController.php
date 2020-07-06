@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Tweet;
+use Illuminate\Http\Request;
+
+class TweetsController extends Controller
+{
+
+    public function store()
+    {
+        $attrubutes = request()->validate(['body'=>'required|max:255']);
+
+        Tweet::create([
+            'user_id'=>auth()->id(),
+            'body' => $attrubutes['body']
+            ]);
+
+       return back()->with('status','completed');
+    }
+}
