@@ -86921,3 +86921,7 @@ video {
     transition-delay: 1000ms;
   }
 }
+
+.mw-10r{
+    max-width: 10rem;
+}
