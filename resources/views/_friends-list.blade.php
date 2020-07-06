@@ -1,19 +1,19 @@
 <h3 class="font-bold text-xl mb-4">
-   Friends
+   Following
 </h3>
 
 <ul>
-    @foreach(range(1,8) as $friend)
+    @foreach(auth()->user()->follows as $user)
 
     <li class="mb-4">
         <div class="flex items-center text-sm">
             <img
-                src="https://i.pravatar.cc/40"
+                src={{ $user->avatar }}
                 alt=""
                 class="rounded-full mr-2"
             >
 
-            John Doe
+            {{ $user->name }}
         </div>
     </li>
 
