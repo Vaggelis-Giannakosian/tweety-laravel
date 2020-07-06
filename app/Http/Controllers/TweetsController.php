@@ -8,6 +8,18 @@ use Illuminate\Http\Request;
 class TweetsController extends Controller
 {
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home',[
+            'tweets'=> auth()->user()->timeline()
+        ]);
+    }
+
     public function store()
     {
         $attrubutes = request()->validate(['body'=>'required|max:255']);
