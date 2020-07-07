@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//DB::listen(function($query){dd($query->sql, $query->bindings);});
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,6 +26,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/tweets', 'TweetsController@index')->name('home');
 });
 
+
+Route::get('/profiles/{user:name}','ProfilesController@show')->name('profile');
 
 Auth::routes();
 

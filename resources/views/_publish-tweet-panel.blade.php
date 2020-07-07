@@ -17,11 +17,13 @@
                 src="{{ auth()->user()->avatar }}"
                 alt=""
                 class="rounded-full mr-2"
+                width="50px"
+                height="50px"
             >
 
             <button
                 type="submit"
-                class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white"
+                class="bg-blue-500 rounded-lg shadow py-2 px-4 text-white"
             >
                 Tweet-a-roo!
             </button>
