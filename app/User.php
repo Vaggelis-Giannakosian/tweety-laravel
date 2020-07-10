@@ -72,5 +72,10 @@ class User extends Authenticatable
         return $append ? "{$path}/{$append}" : $path;
     }
 
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
 
 }
