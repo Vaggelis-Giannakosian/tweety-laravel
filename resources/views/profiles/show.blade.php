@@ -29,12 +29,15 @@
             </div>
 
             <div class="flex">
-                <a href="" class="rounded-full border border-gray-300 text-xs py-2 px-4 text-black mr-2">
-                    Edit Profile
-                </a>
+
+                @can('update',$user)
+                    <a href="{{ $user->path('edit') }}" class="rounded-full border border-gray-300 text-xs py-2 px-4 text-black mr-2">
+                        Edit Profile
+                    </a>
+                @endcan
+
 
                 <x-follow-button :user="$user"></x-follow-button>
-
             </div>
 
         </div>
