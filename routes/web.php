@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function(){
 
 });
 
-Route::get('/explore','ExploreController@index')->middleware('auth');
+Route::get('/explore','ExploreController')->middleware('auth');
 
 Route::get('/profiles/{user:username}','ProfilesController@show')->name('profile');
 
