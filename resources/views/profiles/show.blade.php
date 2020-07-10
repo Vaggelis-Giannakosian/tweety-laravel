@@ -1,6 +1,6 @@
-@extends('layouts.app')
 
-@section('content')
+<x-app>
+
 
     <header class="relative mb-6">
 
@@ -17,6 +17,7 @@
                 style="left:50%; transform: translate(-50%,50%)"
             >
         </div>
+
         <div class="flex justify-between items-center mb-6">
 
             <div>
@@ -38,6 +39,7 @@
 
 
                 <x-follow-button :user="$user"></x-follow-button>
+
             </div>
 
         </div>
@@ -57,4 +59,5 @@
 
     @include('_timeline',['tweets' => $user->tweets])
 
-@endsection
+
+</x-app>

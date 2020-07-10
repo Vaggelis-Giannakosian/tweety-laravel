@@ -3,7 +3,7 @@
 </h3>
 
 <ul>
-    @foreach(auth()->user()->follows as $user)
+    @forelse(auth()->user()->follows as $user)
 
     <li class="mb-4">
         <div>
@@ -22,5 +22,7 @@
         </div>
     </li>
 
-    @endforeach
+    @empty
+        <li>No friends yet!</li>
+    @endforelse
 </ul>
