@@ -29,6 +29,6 @@ class TweetsController extends Controller
             'body' => $attrubutes['body']
             ]);
 
-       return back()->with('status','completed');
+       return  redirect()->route('home');
     }
 }
