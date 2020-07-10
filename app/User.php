@@ -55,8 +55,16 @@ class User extends Authenticatable
     //custom accessor
     public function getAvatarAttribute($value)
     {
-        return asset('uploads/'.$value);
+        return asset( 'uploads/'.($value ?:'avatars/default-avatar.jpeg'));
     }
+
+    //custom mutator
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+
 
     public function path($append = '')
     {

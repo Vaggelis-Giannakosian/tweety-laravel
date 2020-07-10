@@ -86926,3 +86926,12 @@ video {
 .mw-10r{
     max-width:10rem;
 }
+
+.pagination_container .pagination{
+    display: flex;
+    justify-content: center;
+    margin:20px;
+}
+.pagination_container .pagination li {
+    margin: 0 10px;
+}

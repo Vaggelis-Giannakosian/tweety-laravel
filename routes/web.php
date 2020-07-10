@@ -27,10 +27,13 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/profiles/{user:username}/edit','ProfilesController@edit')->name('edit.user')->middleware('can:update,user');
     Route::patch('/profiles/{user:username}','ProfilesController@update')->name('update.user')->middleware('can:update,user');
+
+
     Route::post('/profiles/{user:username}/follow','FollowsController@store')->name('follow');
 
 });
 
+Route::get('/explore','ExploreController@index')->middleware('auth');
 
 Route::get('/profiles/{user:username}','ProfilesController@show')->name('profile');
 
